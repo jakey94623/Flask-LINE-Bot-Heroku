@@ -42,7 +42,7 @@ def callback():
 def handle_message(event):
     print (event.message.text);
     print (event);
-    print (enent.timestamp);
+    print (event.timestamp);
     cur = conn.cursor();
     cur.execute("INSERT INTO linebotmsg (name,msg,date) \
     VALUES (event.source.userId,event.message.text,enent.timestamp )");
