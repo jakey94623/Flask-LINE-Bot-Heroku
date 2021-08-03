@@ -39,9 +39,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print (event.message.text);
-    print (event.source.user_id);
-    print (event.timestamp);
+
     msg = event.message.text;
     userid = event.source.user_id;
     dbtimestamp = event.timestamp;
@@ -52,12 +50,23 @@ def handle_message(event):
         val = (userid, msg,dbtimestamp)
         cur.execute(sql,val);
         conn.commit();
-        print ("Records created successfully");
         conn.close();
     except DatabaseError:
         transaction.rollback()
      
-    get_message = "欸!真的~~"
+    textInt = randint(1, 5);
+    if textInt == 1:
+        get_message = "欸!真的~~"
+    if textInt == 2:
+        get_message = "哇，對耶，妳很棒喔!"
+    if textInt == 3:
+        get_message = "是喔!哇真的是很酷耶"
+    if textInt == 4:
+        get_message = "哈哈，我也這麼覺得耶"
+    if textInt == 5:
+        get_message = ""
+    
+    
     
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")
