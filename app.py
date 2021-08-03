@@ -8,7 +8,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
-import randint
+import random
 import psycopg2
 
 conn = psycopg2.connect(database="dcd5jca9btqeoi", user="azmkghqpoeannh", password="9a117f2c22ec39525492ef4c21c9c6d09ce2a3758336b3fa6581c87b564980b6", host="ec2-52-1-20-236.compute-1.amazonaws.com", port="5432")
@@ -54,7 +54,7 @@ def handle_message(event):
     except DatabaseError:
         transaction.rollback()
      
-    textInt = randint(1, 5);
+    textInt = random.randint(1, 5);
     if textInt == 1:
         get_message = "欸!真的~~"
     if textInt == 2:
