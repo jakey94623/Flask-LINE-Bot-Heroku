@@ -47,15 +47,16 @@ def handle_message(event):
     dbtimestamp = event.timestamp;
     from django.db import transaction, DatabaseError
     try:
-    cur = conn.cursor();
-    sql = "INSERT INTO linebotmsg (name, msg,date) VALUES (%s, %s , %s)"
-    val = (userid, msg,dbtimestamp)
-    cur.execute(sql,val);
-    conn.commit();
-    print ("Records created successfully");
-    conn.close();
+        cur = conn.cursor();
+        sql = "INSERT INTO linebotmsg (name, msg,date) VALUES (%s, %s , %s)"
+        val = (userid, msg,dbtimestamp)
+        cur.execute(sql,val);
+        conn.commit();
+        print ("Records created successfully");
+        conn.close();
     except DatabaseError:
-    transaction.rollback()
+        transaction.rollback()
+     
     get_message = "欸!真的~~"
     
     # Send To Line
