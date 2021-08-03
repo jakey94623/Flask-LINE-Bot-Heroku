@@ -8,6 +8,13 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
+import psycopg2
+
+conn = psycopg2.connect(database="dakka6l80j0ucm", user="gekfwnepynzbtb", password="c94d4e894d3e63744c24a570e6d9d80d05af81a6ef32aa07c320207425209267", host="
+ec2-54-159-175-113.compute-1.amazonaws.com", port="5432")
+
+print "Opened database successfully"
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi(os.environ.get("CHANNEL_ACCESS_TOKEN"))
