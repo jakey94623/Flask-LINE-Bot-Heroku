@@ -42,8 +42,11 @@ def handle_message(event):
     print (event.message.text);
     print (event.source.user_id);
     print (event.timestamp);
+    get_msg = event.message.text;
+    dbuser_id = event.source.user_id;
+    dbtime_stamp = event.timestamp;
     cur = conn.cursor();
-    cur.execute("INSERT INTO linebotmsg (name,msg,date) VALUES (event.source.user_id,event.message.text,event.timestamp)");
+    cur.execute("INSERT INTO linebotmsg (name,msg,date) VALUES (dbuser_id,get_msg,dbtime_stamp)");
     conn.commit();
     print ("Records created successfully");
     conn.close();
