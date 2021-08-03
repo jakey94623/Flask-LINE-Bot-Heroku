@@ -13,7 +13,7 @@ import psycopg2
 
 conn = psycopg2.connect(database="testdb", user="postgres", password="pass123", host="127.0.0.1", port="5432")
 
-print "Opened database successfully"
+print ("Opened database successfully")
 
 app = Flask(__name__)
 
@@ -40,9 +40,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    print event.source.userId
-    print event.message.id
-    print enent.timestamp
+    print (event.source.userId)
+    print (event.message.id)
+    print (enent.timestamp)
     cur = conn.cursor()
     cur.execute("INSERT INTO linebotmsg (name,msg,date) \
     VALUES (event.source.userId,event.message.text,enent.timestamp )");
