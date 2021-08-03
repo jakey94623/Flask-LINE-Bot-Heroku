@@ -40,10 +40,10 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     print (event.message.text);
-    print (event.source.userId);
+    print (event.event.source.user_id);
     print (event.timestamp);
     cur = conn.cursor();
-    cur.execute("INSERT INTO linebotmsg (name,msg,date) VALUES (event.source.userId,event.message.text,enent.timestamp )");
+    cur.execute("INSERT INTO linebotmsg (name,msg,date) VALUES (event.source.user_id,event.message.text,enent.timestamp )");
     conn.commit();
     print ("Records created successfully");
     conn.close();
