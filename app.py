@@ -66,6 +66,12 @@ def handle_message(event):
         get_message = "沒事啦，都會好的"
     if textInt == 6:
         get_message = "😎😎😎"
+    if textInt == 7:
+        get_message = "哇太誇張了吧QAQ"
+    if textInt == 8:
+        get_message = "我都不知道耶，我好震驚喔"
+    if textInt == 9:
+        get_message = "摁....有道理餒"
         
     
     
