@@ -53,7 +53,7 @@ def handle_message(event):
     except DatabaseError:
         transaction.rollback()
      
-    textInt = random.randint(1, 6);
+    textInt = random.randint(1, 9);
     if textInt == 1:
         get_message = "欸!真的~~"
     if textInt == 2:
