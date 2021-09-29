@@ -111,9 +111,9 @@ def handle_message(event):
         
     try:
         profile = line_bot_api.get_profile(userid)
-        print profile
+        print(profile)
     except LineBotApiError as e:
-        print e
+        print(e)
     
     
     # Send To Line
