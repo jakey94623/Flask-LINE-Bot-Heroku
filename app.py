@@ -52,26 +52,28 @@ def handle_message(event):
         conn.close();
     except DatabaseError:
         transaction.rollback()
-     
-    textInt = random.randint(1, 9);
-    if textInt == 1:
-        get_message = "欸!真的~~"
-    if textInt == 2:
-        get_message = "哇，對耶，妳很棒喔!"
-    if textInt == 3:
-        get_message = "是喔!哇真的是很酷耶"
-    if textInt == 4:
-        get_message = "哈哈，我也這麼覺得耶"
-    if textInt == 5:
-        get_message = "沒事啦，都會好的"
-    if textInt == 6:
-        get_message = "😎😎😎"
-    if textInt == 7:
-        get_message = "哇太誇張了吧QAQ"
-    if textInt == 8:
-        get_message = "我都不知道耶，我好震驚喔"
-    if textInt == 9:
-        get_message = "摁....有道理餒"
+    if userid=="U3c822c99099ebc65694c3b8401be9707" :
+        get_message = "哈囉~阿旻"
+    else:
+        textInt = random.randint(1, 9);
+        if textInt == 1:
+            get_message = "欸!真的~~"
+        if textInt == 2:
+            get_message = "哇，對耶，妳很棒喔!"
+        if textInt == 3:
+            get_message = "是喔!哇真的是很酷耶"
+        if textInt == 4:
+            get_message = "哈哈，我也這麼覺得耶"
+        if textInt == 5:
+            get_message = "沒事啦，都會好的"
+        if textInt == 6:
+            get_message = "😎😎😎"
+        if textInt == 7:
+            get_message = "哇太誇張了吧QAQ"
+        if textInt == 8:
+            get_message = "我都不知道耶，我好震驚喔"
+        if textInt == 9:
+            get_message = "摁....有道理餒"
         
     
     
