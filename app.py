@@ -64,7 +64,7 @@ def handle_message(event):
             get_message = "等一下! 大家現在可以看一下詩璇嗎 是不是變好看了呀"
         if textInt == 5:
             get_message = "恭喜發財"
-    elif userid=="U533d128e64adb1462e59acb57b2929d8" :
+    elif userid=="U3c822c99099ebc65694c3b8401be9707" :
         textInt = random.randint(1, 5);
         if textInt == 1:
             get_message = "不要再吃了"
