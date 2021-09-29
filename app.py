@@ -119,5 +119,5 @@ def handle_message(event):
     # Send To Line
     reply = TextSendMessage(text=f"{get_message}")
     
-    line_bot_api.push_message("U3c822c99099ebc65694c3b8401be9707", TextSendMessage(text='測試一下'))
+    line_bot_api.push_message("U533d128e64adb1462e59acb57b2929d8", TextSendMessage(text='欸~妳在幹嘛'))
     
