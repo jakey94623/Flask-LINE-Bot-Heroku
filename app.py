@@ -52,8 +52,42 @@ def handle_message(event):
         conn.close();
     except DatabaseError:
         transaction.rollback()
-    if userid=="U3c822c99099ebc65694c3b8401be9707" :
-        get_message = "哈囉~阿旻"
+    if userid=="U533d128e64adb1462e59acb57b2929d8" :
+         textInt = random.randint(1, 5);
+        if textInt == 1:
+            get_message = "哈囉~璇老大"
+        if textInt == 2:
+            get_message = "哇! 今天的詩璇也很棒喔"
+        if textInt == 3:
+            get_message = "今天比平常好看喔 璇😎"
+        if textInt == 4:
+            get_message = "等一下! 大家現在可以看一下詩璇嗎 是不是變好看了呀"
+        if textInt == 5:
+            get_message = "恭喜發財"
+    elif userid=="U533d128e64adb1462e59acb57b2929d8" :
+        textInt = random.randint(1, 5);
+        if textInt == 1:
+            get_message = "不要再吃了"
+        if textInt == 2:
+            get_message = "趕快瘦下去喔 老鐵"
+        if textInt == 3:
+            get_message = "你最棒了 老鐵"
+        if textInt == 4:
+            get_message = "晚餐該吃個好的吧😎"
+        if textInt == 5:
+            get_message = "YO~"
+    elif userid=="U747ea245f9be60ab55edb6c9d9388d38" :
+        textInt = random.randint(1, 5);
+        if textInt == 1:
+            get_message = "嗨伊藤"
+        if textInt == 2:
+            get_message = "那你很酷耶😎"
+        if textInt == 3:
+            get_message = "作為一名工程師 你的頭髮也太長了吧伊藤"
+        if textInt == 4:
+            get_message = "晚餐該吃個好的吧"
+        if textInt == 5:
+            get_message = "安安 買早餐阿"
     else:
         textInt = random.randint(1, 9);
         if textInt == 1:
