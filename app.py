@@ -109,7 +109,11 @@ def handle_message(event):
         if textInt == 9:
             get_message = "摁....有道理餒"
         
-    
+    try:
+        profile = line_bot_api.get_profile(userid)
+        print profile
+    except LineBotApiError as e:
+        print e
     
     
     # Send To Line
