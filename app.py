@@ -56,10 +56,16 @@ def handle_message(event):
             get_message = "哈囉~璇老大"
     elif userid=="U3c822c99099ebc65694c3b8401be9707":
         textInt = random.randint(1, 9);
-        if 1 == 1:
-            get_message = textInt
-        if 1 == 2:
-             get_message = "你最棒了!老鐵"
+        if textInt == 1:
+            get_message = "不要再吃了"
+        if textInt == 2:
+            get_message = "趕快瘦下去喔 老鐵"
+        if textInt == 3:
+            get_message = "你最棒了 老鐵"
+        if textInt == 4:
+            get_message = "晚餐該吃個好的吧😎"
+        if textInt == 5:
+            get_message = "YO~"
     elif userid=="U747ea245f9be60ab55edb6c9d9388d38":
             get_message = "安安，買早餐阿"
     else:
