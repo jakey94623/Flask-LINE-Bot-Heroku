@@ -52,7 +52,7 @@ def handle_message(event):
         sql = "INSERT INTO linebotmsg (name, msg,date) VALUES (%s, %s , %s)"
         val = (userid, msg,dbtimestamp);
         cur.execute(sql,val);
-        profileSql = "INSERT INTO userProfile(displayName, userid,statusMessage,dbtimestamp) VALUES (%s, %s, %s, %s)"
+        profileSql = "INSERT INTO userProfile(displayName, userid,statusMessage,date) VALUES (%s, %s, %s, %s)"
         profileval = (displayName, userid,statusMessage,dbtimestamp)
         cur.execute(profileSql,profileval);
         conn.commit();
