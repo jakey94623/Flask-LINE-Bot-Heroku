@@ -45,8 +45,8 @@ def handle_message(event):
     try:
         profile = line_bot_api.get_profile(userid);
         print(profile);
-        displayName = profile.get('displayName');
-        statusMessage = profile.get('statusMessage');
+        displayName = profile.displayName;
+        statusMessage = profile.statusMessage;
         conn = psycopg2.connect(database="dcd5jca9btqeoi", user="azmkghqpoeannh", password="9a117f2c22ec39525492ef4c21c9c6d09ce2a3758336b3fa6581c87b564980b6", host="ec2-52-1-20-236.compute-1.amazonaws.com", port="5432")
         cur = conn.cursor();
         sql = "INSERT INTO linebotmsg (name, msg,date) VALUES (%s, %s , %s)"
