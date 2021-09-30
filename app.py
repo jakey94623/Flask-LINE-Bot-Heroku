@@ -43,11 +43,18 @@ def handle_message(event):
     dbtimestamp = event.timestamp;
     from django.db import transaction, DatabaseError
     try:
+        profile = line_bot_api.get_profile(userid);
+        print(profile);
+        displayName = profile.displayName;
+        statusMessage = profile.statusMessage;
         conn = psycopg2.connect(database="dcd5jca9btqeoi", user="azmkghqpoeannh", password="9a117f2c22ec39525492ef4c21c9c6d09ce2a3758336b3fa6581c87b564980b6", host="ec2-52-1-20-236.compute-1.amazonaws.com", port="5432")
         cur = conn.cursor();
         sql = "INSERT INTO linebotmsg (name, msg,date) VALUES (%s, %s , %s)"
-        val = (userid, msg,dbtimestamp)
+        val = (userid, msg,dbtimestamp);
         cur.execute(sql,val);
+        profileSql = "INSERT INTO userProfile(displayName, userid,statusMessage,dbtimestamp) VALUES (%s, %s, %s, %s)"
+        profileval = (displayName, userid,statusMessage,dbtimestamp)
+        cur.execute(profileSql,profileval);
         conn.commit();
         conn.close();
     except DatabaseError:
@@ -109,11 +116,6 @@ def handle_message(event):
         if textInt == 9:
             get_message = "摁....有道理餒"
         
-    try:
-        profile = line_bot_api.get_profile(userid)
-        print(profile)
-    except LineBotApiError as e:
-        print(e)
     
     
     # Send To Line
