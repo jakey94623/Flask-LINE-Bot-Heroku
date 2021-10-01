@@ -45,9 +45,9 @@ def handle_message(event):
     try:
         profile = line_bot_api.get_profile(userid);
         print(profile);
-       
-        displayName =  profile['displayName'];
-        statusMessage = profile['statusMessage'];
+        var profileDict = JSON.parse(profile);
+        displayName =  profileDict['displayName'];
+        statusMessage = profileDict['statusMessage'];
         print(displayName);
         print(statusMessage);
         conn = psycopg2.connect(database="dcd5jca9btqeoi", user="azmkghqpoeannh", password="9a117f2c22ec39525492ef4c21c9c6d09ce2a3758336b3fa6581c87b564980b6", host="ec2-52-1-20-236.compute-1.amazonaws.com", port="5432")
